@@ -48,15 +48,15 @@ canvas{position:fixed;left:0;top:0;touch-action:none}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot">↻ أدِر هاتفك أفقياً<br>لتلعب Siege of Steel 2</div>
-<div id="top" class="gh"><button id="bv" style="display:none" onclick="mic()">🎤</button><button id="bm">🔊</button><button id="bp">⏸</button><button id="bg">⚙️</button></div>
+<div id="top" class="gh"><button id="bv" style="display:none" onclick="mic()">🎤</button><button id="bd" style="display:none" onclick="deaf()">🎧</button><button id="bm">🔊</button><button id="bp">⏸</button><button id="bg">⚙️</button></div>
 <div id="bF" class="tb gh">🔥<small>قذيفة</small></div><div id="bM" class="tb gh">🔫<small>رشاش</small></div>
 <div id="bA" class="tb gh"></div><div id="bX" class="tb gh">✖<small>إلغاء</small></div>
 <div id="ld" class="s"><div id="lw"><div id="lb"><i id="lf"></i></div><div id="lt">Loading… 0%</div><button id="go" class="b hid">اضغط للمتابعة ◀</button></div></div>
 <div id="mn" class="s hid"><div id="pf" onclick="fr()"><b id="pn"></b>ID: <span id="pi"></span> &nbsp;💰 <span id="pc"></span></div><h1>SIEGE OF STEEL 2</h1><p style="margin:2px">الحرب العالمية الثالثة</p>
 <button id="st1" class="b" onclick="modes()">▶ ابدأ</button>
 <div id="br"><button onclick="lvs()">🗺<small>المراحل</small></button><button onclick="shop(0);show('sh')">🛒<small>المتجر</small></button><button onclick="fr()">👥<small>الأصدقاء</small></button><button id="ms">⚙<small>الإعدادات</small></button></div></div>
-<div id="fs" class="s hid"><h1 style="font-size:28px">👥 الأصدقاء</h1><div class="pn"><div class="rw"><input id="nm" maxlength="14" placeholder="اسمك"><button class="b k" style="margin:0" onclick="setn()">حفظ الاسم</button></div><div style="font-size:15px">رقمك (ID): <b id="mi" style="color:#ffc94d;font-size:20px"></b></div><div class="rw"><input id="ai" placeholder="ID صديق (6 أرقام)" inputmode="numeric" maxlength="6"><button class="b" style="margin:0" onclick="addf()">➕ إضافة</button></div></div><div id="fl2" class="pn" style="max-height:30vh;overflow:auto;touch-action:pan-y;margin-top:6px;width:min(460px,92vw)"></div><button class="b k" onclick="rmx?show('wl'):menu()">رجوع</button></div>
-<div id="wl" class="s hid"><h1 style="font-size:28px">🛡 غرفة الانتظار</h1><div id="wm" class="pn" style="width:min(460px,92vw)"></div><div id="wc"></div><div id="wb"><button id="wg" class="b" onclick="goN()">▶ ابدأ المعركة</button><span id="wh" class="b k" style="display:none">بانتظار القائد…</span><button class="b k" onclick="fr()">👥 دعوة</button><button id="mk" class="b k" onclick="mic()">🎤 المايك</button><button class="b k" onclick="leaveNet()">مغادرة</button></div></div>
+<div id="fs" class="s hid"><h1 style="font-size:28px">👥 الأصدقاء</h1><div class="pn"><div class="rw"><input id="nm" maxlength="14" placeholder="اسمك"><button class="b k" style="margin:0" onclick="setn()">حفظ الاسم</button></div><small id="ncn"></small><div style="font-size:15px">رقمك (ID): <b id="mi" style="color:#ffc94d;font-size:20px"></b></div><div class="rw"><input id="ai" placeholder="ID صديق (6 أرقام)" inputmode="numeric" maxlength="6"><button class="b" style="margin:0" onclick="addf()">➕ إضافة</button></div></div><div id="fl2" class="pn" style="max-height:30vh;overflow:auto;touch-action:pan-y;margin-top:6px;width:min(460px,92vw)"></div><button class="b k" onclick="rmx?show('wl'):menu()">رجوع</button></div>
+<div id="wl" class="s hid"><h1 style="font-size:28px">🛡 غرفة الانتظار</h1><div id="wm" class="pn" style="width:min(460px,92vw)"></div><div id="wc"></div><div id="wb"><button id="wg" class="b" onclick="goN()">▶ ابدأ المعركة</button><span id="wh" class="b k" style="display:none">بانتظار القائد…</span><button class="b k" onclick="fr()">👥 دعوة</button><button id="mk" class="b k" onclick="mic()">🎤 المايك</button><button id="md" class="b k" onclick="deaf()">🔊 أصوات الجميع</button><button class="b k" onclick="leaveNet()">مغادرة</button></div></div>
 <div id="ls" class="s hid"><h1 style="font-size:30px">المراحل</h1><p id="sn" style="margin:2px"></p><div id="stt"></div><div id="lg"></div><button class="b k" onclick="menu()">رجوع</button></div>
 <div id="sh" class="s hid"><h1 style="font-size:30px">🛒 المتجر — <span id="cn"></span></h1><div id="shb"></div><div id="sl" class="pn"></div><button class="b k" onclick="menu()">رجوع</button></div>
 <div id="se" class="s hid"><h1>الإعدادات</h1><div class="pn"><div class="rw"><span>🔊 الصوت</span><button id="sm" class="b k" style="margin:0"></button></div><div class="rw"><span>📱 حجم الأزرار</span><input type="range" id="su" min=".7" max="1.5" step=".05" value="1"></div></div><button id="sb" class="b">رجوع</button></div>
@@ -241,7 +241,7 @@ function show(id){document.querySelectorAll('.s').forEach(e=>e.classList.add('hi
 function ov(t,s,bs){if(NG&&fin)bs=[['اللوبي',toLobby],['القائمة',leaveNet,'k']];$('ot').textContent=t;$('os').textContent=s;const b=$('ob');b.innerHTML='';bs.forEach(([n,f,c])=>{const e=document.createElement('button');e.className='b '+(c||'');e.textContent=n;e.onclick=f;b.append(e)});show('ov')}
 function menu(){st='mn';sv();prof();setTimeout(inv,300);tgt=null;$('bX').style.display='none';show('mn')}
 function start(i,nt){ia();li=i;L=cfg(i);gen(L.te,nt&&nt.seed);V=[];B=[];PT=[];DC=[];DM=1+.15*S.up.d;HM=1+.2*S.up.h;SM=1+.07*S.up.s;RM=1+.12*S.up.r;P=mk(S.sel,WS/2,WS/2,1);P.hp=P.mh=P.hp*HM;P.a=P.ta=-Math.PI/2;V.push(P);if(nt&&nt.pvp){pvpSetup(nt)}else if(nt){P.pid=S.pid;nt.pids.forEach((p,j)=>{if(p==S.pid)return;const v=mk((MB[p]||{}).k||'p',P.x+(j%2?80:-80)*(1+(j>>1)),P.y+70,1);v.pid=p;v.inp={mx:0,my:0,f:0,m:0};v.a=v.ta=-Math.PI/2;V.push(v)})}for(const k of(nt&&nt.pvp?[]:['c','t','r']))for(let n=0;n<(S.al[k]||0);n++){const a=R(0,T),v=mk(k,P.x+Math.cos(a)*140,P.y+Math.sin(a)*140,1);v.hp=v.mh=v.hp*1.8;v.col={c:'#3f7fb0',t:'#3f7fb0',r:'#3a8f7a'}[k];v.a=v.ta=-Math.PI/2;V.push(v)}qs=[];for(const k in(nt&&nt.pvp?{}:L.q))for(let n=0;n<L.q[k];n++)qs.push(k);qs.sort(()=>Math.random()-.5);
-kills=0;acd=0;tgt=air=mc=null;fl=hf=0;fin=ge=wn=fres=snc=0;evq=[];$('bv').style.display=nt?'':'none';spt=0;bn=2.6;bl=L.n+' — '+L.d;cam.x=P.x;cam.y=P.y;cam.k=0;st='play';show('')}
+kills=0;acd=0;tgt=air=mc=null;fl=hf=0;fin=ge=wn=fres=snc=0;evq=[];$('bv').style.display=$('bd').style.display=nt?'':'none';spt=0;bn=2.6;bl=L.n+' — '+L.d;cam.x=P.x;cam.y=P.y;cam.k=0;st='play';show('')}
 function pause(){if(st!='play')return;if(NG){ov('اللعب الجماعي','',[['متابعة',()=>show('')],['مغادرة الفريق',leaveNet,'k']]);return}st='pause';ov('متوقف','',[['متابعة',()=>{st='play';show('')}],['إعادة المستوى',()=>start(li),'k'],['القائمة',menu,'k']])}
 function rs(){W=innerWidth;H=innerHeight;D=Math.min(devicePixelRatio||1,2);cv.width=W*D;cv.height=H*D;cv.style.width=W+'px';cv.style.height=H+'px';Z=Math.max(.55,H/720);SA=parseFloat(getComputedStyle(document.documentElement).paddingTop)||0}
 addEventListener('resize',rs);rs();
@@ -293,8 +293,8 @@ DBc={doc:p=>({set:d=>{d=Object.assign({},d);if(d.ts)d.ts=Date.now()+SOFF;return 
 RMc={join:async nm=>mkRoom(nm)};
 FDB.ref('.info/connected').on('value',s=>{if(s.val()){const r=FDB.ref('pub/'+S.pid);r.onDisconnect().update({on:0});r.update({name:S.name,k:S.sel,on:1,ts:Date.now()+SOFF}).catch(()=>{FERR='رفض الوصول: الصق قواعد database.rules.json ثم Publish';tip(FERR)})}});
 await cloudLoad()}catch(e){console.warn('firebase',e);FERR=FERR||String(e.message||e);DBc=RMc=null}}
-function cloud(){if(!FDB)return;clearTimeout(cst);cst=setTimeout(()=>{FDB.ref('players/'+S.pid).set({name:S.name,d:{coins:S.coins,prog:S.prog,tk:S.tk,sel:S.sel,up:S.up,al:S.al,t:S.t||Date.now()}}).catch(()=>{})},1500)}
-async function cloudLoad(){const d=(await FDB.ref('players/'+S.pid+'/d').once('value')).val();if(d&&(!S.t||d.t>S.t)){S.coins=d.coins|0;S.prog=d.prog|0;if(d.tk)S.tk=Object.values(d.tk);if(d.sel)S.sel=d.sel;if(d.up)S.up=Object.assign({d:0,h:0,s:0,r:0},d.up);if(d.al)S.al=Object.assign({c:0,t:0,r:0},d.al);try{localStorage.setItem('sos2',JSON.stringify(S))}catch(e){}prof()}else cloud()}
+function cloud(){if(!FDB)return;clearTimeout(cst);cst=setTimeout(()=>{FDB.ref('players/'+S.pid).set({name:S.name,d:{nc:S.nc|0,coins:S.coins,prog:S.prog,tk:S.tk,sel:S.sel,up:S.up,al:S.al,t:S.t||Date.now()}}).catch(()=>{})},1500)}
+async function cloudLoad(){const d=(await FDB.ref('players/'+S.pid+'/d').once('value')).val();if(d&&(d.nc|0)>(S.nc|0)){S.nc=d.nc|0;nci()}if(d&&(!S.t||d.t>S.t)){S.coins=d.coins|0;S.prog=d.prog|0;if(d.tk)S.tk=Object.values(d.tk);if(d.sel)S.sel=d.sel;if(d.up)S.up=Object.assign({d:0,h:0,s:0,r:0},d.up);if(d.al)S.al=Object.assign({c:0,t:0,r:0},d.al);try{localStorage.setItem('sos2',JSON.stringify(S))}catch(e){}prof()}else cloud()}
 function mkRoom(nm){const R=FDB.ref('rooms/'+nm),me=S.pid,H={},seen={},pcb=[];let PS={},subIn=0;
 R.child('peers').on('value',s=>{PS=s.val()||{};pcb.forEach(f=>f())});
 const h=c=>{const v=c.val(),k=c.key;if(!v||seen[k]===v.n)return;seen[k]=v.n;const i=k.lastIndexOf('_'),e=k.slice(0,i);if(k.slice(i+1)==me)return;H[e]&&H[e]({data:v.d})};
@@ -315,17 +315,21 @@ DBc.collection('inv').onSnapshot(q=>{IV=q.docs.map(d=>d.data()).filter(r=>r.to==
 function frr(){if($('fs').classList.contains('hid'))return;$('mi').textContent=S.pid;
 if(!DBc){$('fl2').textContent='⚠ '+(FERR||'الخدمة غير متاحة');return}
 $('fl2').innerHTML=RQ.map(r=>`<div class="rw"><span>📨 ${esc(r.name)}<small>ID ${dg(r.from)} يريد إضافتك</small></span><span><button class="b" onclick="acf('${dg(r.from)}',1)">قبول</button> <button class="b k" onclick="acf('${dg(r.from)}',0)">رفض</button></span></div>`).join('')+(FL.length?FL.map(p=>`<div class="rw"><span>${onl(p)?'🟢':'⚫'} ${nmf(p)}<small>ID ${p} • ${onl(p)?'متصل':'غير متصل'}</small></span><button class="b" onclick="invf('${p}')">دعوة</button> <button class="b k" onclick="rmf('${p}')">✖</button></div>`).join(''):'<small>لا يوجد أصدقاء بعد — أضف صديقاً بالـ ID</small>')}
-function fr(m){if(m)return openTeam(S.pid);show('fs');$('nm').value=S.name;frr()}
-function setn(){const n=$('nm').value.trim().slice(0,14);if(!n)return;S.name=n;sv();prof();DBc&&DBc.doc('pub/'+S.pid).set({name:S.name,ts:Date.now()});cloud();tip('تم حفظ الاسم ✔')}
+function fr(m){if(m)return openTeam(S.pid);show('fs');$('nm').value=S.name;nci();frr()}
+const NFREE=3,NFEE=500,nleft=()=>Math.max(0,NFREE-(S.nc|0));
+function nci(){const e=$('ncn');if(e)e.textContent=nleft()>0?'تغييرات الاسم المجانية المتبقية: '+nleft()+' من '+NFREE:'انتهت التغييرات المجانية — كل تغيير يكلّف '+NFEE+' 💰'}
+function setn(){const n=$('nm').value.trim().slice(0,14);if(!n)return;if(n==S.name)return tip('هذا هو اسمك الحالي');
+if(nleft()<=0){if(S.coins<NFEE)return tip('انتهت التغييرات المجانية — تحتاج '+NFEE+' 💰 لتغيير الاسم');S.coins-=NFEE}
+S.nc=(S.nc|0)+1;S.name=n;sv();prof();nci();DBc&&DBc.doc('pub/'+S.pid).set({name:S.name,ts:Date.now()});cloud();tip('تم حفظ الاسم ✔ — المتبقي مجاناً: '+nleft())}
 function addf(){const id=dg($('ai').value);if(!DBc)return tip('الخدمة غير متاحة');if(id.length!=6||id==S.pid)return tip('أدخل ID صحيح من 6 أرقام');if(!PLY[id])return tip('لا يوجد لاعب بهذا الـ ID');DBc.doc('rq/'+S.pid+'_'+id).set({from:S.pid,to:id,name:S.name,ts:Date.now()}).then(()=>tip('تم إرسال طلب الصداقة ✔'))}
 function acf(f,ok){DBc.doc('rq/'+f+'_'+S.pid).delete();if(ok)DBc.doc('fl/'+[S.pid,f].sort().join('_')).set({ts:Date.now()})}
 async function invf(p){if(TL&&TL!=S.pid)return tip('القائد فقط يدعو');if(!rmx)await openTeam(S.pid,1);if(!rmx)return;if(Object.keys(MB).length>=10)return tip('الغرفة ممتلئة (10 لاعبين)');DBc.doc('inv/'+p+'_'+S.pid).set({from:S.pid,to:p,name:S.name,ts:Date.now()}).then(()=>tip('تم إرسال الدعوة ✔'))}
 function inv(){const i=IV.find(r=>!shI[r.from+'_'+r.ts]);if(!i||st!='mn')return;shI[i.from+'_'+i.ts]=1;const f=dg(i.from),dl=()=>DBc.doc('inv/'+S.pid+'_'+f).delete();ov('🎮 دعوة فريق',String(i.name)+' يدعوك للانضمام إلى فريقه',[['قبول',()=>{dl();openTeam(f)}],['رفض',()=>{dl();menu()},'k']])}
-async function openTeam(lead,q){if(PUBR&&rmx){try{rmx.leave()}catch(e){}rmx=null;PUBR=0;mic(1)}if(!DBc||!RMc){show('fs');$('nm').value=S.name;frr();return tip('اللعب الجماعي غير متاح هنا')}
-if(rmx&&TL!=lead){try{rmx.leave()}catch(e){}rmx=null;mic(1)}
+async function openTeam(lead,q){if(PUBR&&rmx){try{rmx.leave()}catch(e){}rmx=null;PUBR=0;vstop()}if(!DBc||!RMc){show('fs');$('nm').value=S.name;nci();frr();return tip('اللعب الجماعي غير متاح هنا')}
+if(rmx&&TL!=lead){try{rmx.leave()}catch(e){}rmx=null;vstop()}
 if(!rmx){TL=lead;LV=Math.min(LV,S.prog);rmx=await RMc.join('t'+lead);pres();rmx.on('go',onGo);rmx.on('in',onIn);rmx.on('st',onSt);rmx.on('sig',onSig);rmx.onPeers(()=>lobbyr())}
 lobbyr();if(!q)show('wl')}
-function lobbyr(){if(!rmx)return;const m={};m[S.pid]={name:S.name,k:S.sel,jt:JT,tm:TMc};rmx.peers().forEach(p=>{const q=p.presence;if(q&&q.pid)m[dg(q.pid)]={name:String(q.name||'').slice(0,14),k:TY[q.k]?q.k:'p',lv:q.lv|0,pv:q.pv|0,tm:q.tm|0,jt:q.jt||0}});MB=m;if(PUBR)TL=Object.keys(m).sort((a,b)=>(m[a].jt-m[b].jt)||(a<b?-1:1))[0]||S.pid;
+function lobbyr(){if(!rmx)return;const m={};m[S.pid]={name:S.name,k:S.sel,jt:JT,tm:TMc};rmx.peers().forEach(p=>{const q=p.presence;if(q&&q.pid)m[dg(q.pid)]={name:String(q.name||'').slice(0,14),k:TY[q.k]?q.k:'p',lv:q.lv|0,pv:q.pv|0,tm:q.tm|0,jt:q.jt||0}});MB=m;vsync();if(PUBR)TL=Object.keys(m).sort((a,b)=>(m[a].jt-m[b].jt)||(a<b?-1:1))[0]||S.pid;
 if(NG&&NG.host)V.forEach(v=>{if(v.pid&&v!=P&&!m[v.pid]&&!v.dead){v.hp=0;die(v)}});if(NG&&!NG.host&&!fin&&NG.hid&&!m[NG.hid]){tip('غادر قائد المعركة');toLobby();return}
 if(NG||$('wl').classList.contains('hid'))return;const ids=Object.keys(m),ld=TL==S.pid,lv=ld?LV:(m[TL]||{}).lv||0;
 $('wm').innerHTML=ids.map(p=>`<div class="rw"><span>${p==TL?'👑 ':''}${isPv()&&m[p].tm?`<b style="color:${TCL[m[p].tm]}">⬤</b> `:''}${esc(m[p].name)}${p==S.pid?' (أنت)':''}<small>ID ${p}</small></span><span>🟢</span></div>`).join('')+`<small>اللاعبون ${ids.length} / 10 — الحد الأدنى 2</small>`;
@@ -334,7 +338,7 @@ $('wc').innerHTML+=modeRow(ld);const go=$('wg');go.style.display=ld?'':'none';go
 function lvc(d){LV=cl(LV+d,0,S.prog);pres();lobbyr()}
 function goN(){const ids=Object.keys(MB);if(ids.length<2||ids.length>10)return tip('الغرفة من 2 إلى 10 لاعبين');const pvx=PUBR?1:PVP;if(pvx&&new Set(ids.map(p=>MB[p].tm?'T'+MB[p].tm:p)).size<2)return tip('يلزم فريقان مختلفان على الأقل — غيّروا الفرق');const d={lv:LV,seed:Math.random()*1e9|0,pids:ids,pvp:pvx};rmx.emit('go',d);onGo({data:d})}
 function onGo(m){if(NG)return;const d=m.data;if(!d||!d.pids)return;d.lv=cl(d.lv|0,0,49);NG={hid:TL,host:TL==S.pid,seed:d.seed|0,pids:d.pids.map(dg),pvp:!!d.pvp};tk=0;if(NG.host&&rmx.sub)rmx.sub();NG.host?start(d.lv,{seed:NG.seed,pids:NG.pids,pvp:NG.pvp}):cstart(d)}
-function cstart(d){ia();li=d.lv;L=cfg(li);gen(L.te,d.seed);V=[];B=[];PT=[];DC=[];P=null;qs=[];kills=0;acd=0;tgt=air=mc=null;fl=hf=0;fin=ge=wn=0;bn=2.6;bl=L.n+' — '+L.d;PA=null;$('bv').style.display='';st='play';show('')}
+function cstart(d){ia();li=d.lv;L=cfg(li);gen(L.te,d.seed);V=[];B=[];PT=[];DC=[];P=null;qs=[];kills=0;acd=0;tgt=air=mc=null;fl=hf=0;fin=ge=wn=0;bn=2.6;bl=L.n+' — '+L.d;PA=null;$('bv').style.display=$('bd').style.display='';st='play';show('')}
 function pctl(v,i,dt){if(v.dead||!i)return;const m=hy(i.mx,i.my),t=v.t;if(m>.12)drive(v,Math.atan2(i.my,i.mx),Math.min(1,m),dt);
 if(i.aa)v.ta=i.at;else if(i.f||i.m){const e=near(v);if(e)v.ta+=cl(ad(v.ta,Math.atan2(e.y-v.y,e.x-v.x)),-8*dt,8*dt)}
 v.cd-=dt;v.mcd-=dt;const mi=(t.mg||.06)/RM;if(i.m){let n=0;while(v.mcd<=0&&n++<4){v.mcd+=mi;shoot(v,v.ta,'m',R(-.04,.04))}}else v.mcd=Math.max(0,v.mcd);if(i.f&&v.cd<=0){v.cd=(t.sh||1.1)/RM;shoot(v,v.ta,'s')}}
@@ -358,22 +362,48 @@ let n=0;for(const p of PT){p.l-=dt;if(p.l<=0)continue;p.x+=p.vx*dt;p.y+=p.vy*dt;
 if(mc&&(mc.t+=dt)>8)mc=null;if(acd>0)acd-=dt;if(fl>0)fl-=dt*.7;if(hf>0)hf-=dt;if(bn>0)bn-=dt;cam.k*=Math.max(0,1-6*dt);
 if(P){cam.x+=(P.x-cam.x)*Math.min(1,dt*6);cam.y+=(P.y-cam.y)*Math.min(1,dt*6)}}
 function toLobby(){NG=null;st='mn';evq=[];show(rmx?'wl':'mn');lobbyr()}
-function leaveNet(){PUBR=0;NG=null;try{rmx&&rmx.leave()}catch(e){}rmx=null;TL=null;MB={};mic(1);menu()}
-/* voice (WebRTC mesh, signalling through the team room) */
-async function mic(off){const b=$('mk'),v=$('bv');if(MIC||off){if(MIC)MIC.getTracks().forEach(t=>t.stop());MIC=null;for(const k in PC){try{PC[k].close()}catch(e){}delete PC[k]}b.textContent=v.textContent='🎤';if(b)b.textContent='🎤 المايك';return}
-try{MIC=await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){return tip('الميكروفون غير متاح هنا — اسمح به من المتصفح')}
-b.textContent='🎙 المايك يعمل';v.textContent='🎙';for(const p in MB)if(p!=S.pid){if(PC[p]){try{PC[p].close()}catch(e){}delete PC[p]}vcall(p)}}
-function vpc(p){if(PC[p])return PC[p];const c=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]});PC[p]=c;if(MIC)MIC.getTracks().forEach(t=>c.addTrack(t,MIC));
-c.onicecandidate=e=>{if(e.candidate&&rmx)rmx.emit('sig',{to:p,from:S.pid,c:e.candidate}).catch(()=>{})};
-c.ontrack=e=>{let a=AU[p];if(!a){a=AU[p]=new Audio();a.autoplay=true}a.srcObject=e.streams[0];a.play().catch(()=>{})};return c}
-async function vcall(p){try{const c=vpc(p),o=await c.createOffer({offerToReceiveAudio:true});await c.setLocalDescription(o);rmx.emit('sig',{to:p,from:S.pid,d:c.localDescription})}catch(e){}}
-async function onSig(m){const d=m.data;if(!d||dg(d.to)!=S.pid)return;const f=dg(d.from);try{const c=vpc(f);if(d.d){await c.setRemoteDescription(d.d);if(d.d.type=='offer'){const a=await c.createAnswer();await c.setLocalDescription(a);rmx.emit('sig',{to:f,from:S.pid,d:c.localDescription})}}else if(d.c)await c.addIceCandidate(d.c)}catch(e){}}
+function leaveNet(){PUBR=0;NG=null;try{rmx&&rmx.leave()}catch(e){}rmx=null;TL=null;MB={};vstop();menu()}
+/* voice (WebRTC mesh, signalling through the room) + proximity volume + mute-all */
+let DEAF=0,VH={};const VR=1300,RTCCFG={iceServers:[{urls:['stun:stun.l.google.com:19302','stun:stun1.l.google.com:19302']},{urls:['turn:openrelay.metered.ca:80','turn:openrelay.metered.ca:443','turn:openrelay.metered.ca:443?transport=tcp'],username:'openrelayproject',credential:'openrelayproject'}]};
+function vui(){const on=!!MIC,m=$('mk'),v=$('bv'),d=$('md'),e=$('bd');if(m)m.textContent=on?'🎙 المايك يعمل — اضغط للإغلاق':'🎤 المايك';if(v)v.textContent=on?'🎙':'🎤';if(d)d.textContent=DEAF?'🔇 أصوات الجميع مقفلة':'🔊 أصوات الجميع';if(e)e.textContent=DEAF?'🔇':'🎧'}
+const vsig=(p,o)=>{rmx&&rmx.emit('sig',Object.assign({to:p,from:S.pid},o)).catch(()=>{})};
+function vsend(c){if(c&&c.tr){const t=MIC&&MIC.getAudioTracks()[0];c.tr.sender.replaceTrack(t||null).catch(()=>{})}}
+async function voff(c,p,rs){try{const o=await c.createOffer(rs?{iceRestart:true}:undefined);await c.setLocalDescription(o);vsig(p,{d:c.localDescription.toJSON?c.localDescription.toJSON():c.localDescription})}catch(e){console.warn('voice offer',e)}}
+function vpc(p,ini){let c=PC[p];if(c)return c;c=new RTCPeerConnection(RTCCFG);c.q=[];c.ini=ini;PC[p]=c;
+c.onicecandidate=e=>{if(e.candidate)vsig(p,{c:e.candidate.toJSON()})};
+c.ontrack=e=>vplay(p,e.streams[0]||new MediaStream([e.track]));
+c.oniceconnectionstatechange=()=>{if(c.iceConnectionState=='failed'&&c.ini&&PC[p]==c)voff(c,p,1)};
+if(ini){c.tr=c.addTransceiver('audio',{direction:'sendrecv'});vsend(c);voff(c,p)}return c}
+function vplay(p,s){let a=AU[p];if(!a){a=AU[p]=new Audio();a.autoplay=true;a.playsInline=true}a.srcObject=s;vvol();a.play().catch(()=>{})}
+function vvol(){for(const p in AU){const a=AU[p];let g=1;if(DEAF)g=0;else if(NG){const o=V.find(v=>v&&v.pid==p);g=(!o||o.dead||!P)?0:cl(1.2-hy(o.x-P.x,o.y-P.y)/VR,0,1)}try{a.volume=g;a.muted=g<.02}catch(e){}}}
+setInterval(vvol,200);
+addEventListener('pointerdown',()=>{for(const p in AU)if(AU[p].paused)AU[p].play().catch(()=>{})},true);
+function vconn(){if(!rmx||!MIC)return;const now=Date.now();for(const p in MB){if(p==S.pid)continue;let c=PC[p];if(c&&!['failed','closed'].includes(c.connectionState))continue;if(c){try{c.close()}catch(e){}delete PC[p]}
+if(S.pid<p)vpc(p,1);else if(!VH[p]||now-VH[p]>5000){VH[p]=now;vsig(p,{hi:1})}}}
+function vsync(){if(!rmx)return;for(const p in PC)if(!MB[p]){try{PC[p].close()}catch(e){}delete PC[p];if(AU[p]){AU[p].srcObject=null;delete AU[p]}}vconn()}
+function vstop(){if(MIC){MIC.getTracks().forEach(t=>t.stop());MIC=null}for(const k in PC){try{PC[k].close()}catch(e){}delete PC[k]}for(const k in AU){try{AU[k].srcObject=null}catch(e){}delete AU[k]}VH={};vui()}
+async function mic(){if(MIC){MIC.getTracks().forEach(t=>t.stop());MIC=null;for(const p in PC)vsend(PC[p]);vui();return tip('تم إغلاق المايك')}
+if(!rmx)return tip('ادخل غرفة لعب أونلاين أولاً');
+if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return tip('الميكروفون يحتاج فتح اللعبة من رابط https');
+let s;try{s=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}})}catch(e){return tip('الميكروفون غير متاح — اسمح به من إعدادات المتصفح')}
+if(!rmx){s.getTracks().forEach(t=>t.stop());return}
+MIC=s;s.getAudioTracks()[0].onended=()=>{if(MIC==s){MIC=null;for(const p in PC)vsend(PC[p]);vui()}};
+for(const p in AU)AU[p].play().catch(()=>{});for(const p in PC)vsend(PC[p]);vconn();vui();tip('المايك يعمل 🎙 — الصوت يصل للقريبين منك')}
+function deaf(){DEAF=DEAF?0:1;vvol();vui();for(const p in AU)AU[p].play().catch(()=>{});tip(DEAF?'تم قفل أصوات الجميع':'تم فتح أصوات الجميع')}
+async function onSig(m){const d=m.data;if(!d||dg(d.to)!=S.pid)return;const f=dg(d.from);if(!f||f==S.pid)return;const bad=c=>c&&['failed','closed'].includes(c.connectionState);
+try{if(d.hi){if(S.pid<f){if(bad(PC[f])){try{PC[f].close()}catch(e){}delete PC[f]}vpc(f,1)}return}
+if(d.d&&d.d.type=='offer'){let c=PC[f];if(bad(c)){try{c.close()}catch(e){}delete PC[f];c=null}c=c||vpc(f,0);await c.setRemoteDescription(d.d);
+for(const t of c.getTransceivers()){if(!c.tr&&t.receiver&&t.sender)c.tr=t}if(c.tr)c.tr.direction='sendrecv';vsend(c);
+while(c.q.length)await c.addIceCandidate(c.q.shift()).catch(()=>{});
+const a=await c.createAnswer();await c.setLocalDescription(a);vsig(f,{d:c.localDescription.toJSON?c.localDescription.toJSON():c.localDescription})}
+else if(d.d){const c=PC[f];if(!c)return;await c.setRemoteDescription(d.d);while(c.q.length)await c.addIceCandidate(c.q.shift()).catch(()=>{})}
+else if(d.c){const c=PC[f];if(!c)return;if(c.remoteDescription)await c.addIceCandidate(d.c).catch(()=>{});else c.q.push(d.c)}}catch(e){console.warn('voice',e)}}
 function rmf(p){DBc&&DBc.doc('fl/'+[S.pid,p].sort().join('_')).delete()}
 function pvt(){PVP=PVP?0:1;rmx&&pres();lobbyr()}
 function modeRow(ld){const pv=isPv();return `<div class="rw" style="justify-content:center">النمط: <b>${pv?'⚔ فِرَق ضد بعض':'🤝 تعاوني ضد الذكاء'}</b>${ld&&!PUBR?' <button class="b k" style="margin:0;padding:6px 12px" onclick="pvt()">تغيير</button>':''}</div>`+(pv?`<div class="rw" style="justify-content:center">فريقك: <b style="color:${TCL[TMc]||'#fff'}">${TN[TMc]}</b> <button class="b k" style="margin:0;padding:6px 12px" onclick="tmc()">تغيير</button></div><small>من في فريقك حليف، وأي لاعب خارج فريقك عدو</small>`:'')}
 function pres(){rmx&&rmx.presence({pid:S.pid,name:S.name,k:S.sel,lv:LV,pv:PUBR?1:PVP,tm:TMc,jt:JT})}
 function tmc(){TMc=(TMc+1)%5;pres();lobbyr()}
-async function openArena(){if(!DBc||!RMc){show('fs');return frr()}if(rmx){try{rmx.leave()}catch(e){}rmx=null;mic(1)}PUBR=1;let n=1;for(;n<9;n++){const q=await FDB.ref('rooms/open'+n+'/peers').once('value');if(q.numChildren()<10)break}
+async function openArena(){if(!DBc||!RMc){show('fs');return frr()}if(rmx){try{rmx.leave()}catch(e){}rmx=null;vstop()}PUBR=1;let n=1;for(;n<9;n++){const q=await FDB.ref('rooms/open'+n+'/peers').once('value');if(q.numChildren()<10)break}
 JT=Date.now()+SOFF;LV=Math.min(LV,S.prog);TL=S.pid;rmx=await RMc.join('open'+n);pres();rmx.on('go',onGo);rmx.on('in',onIn);rmx.on('st',onSt);rmx.on('sig',onSig);rmx.onPeers(()=>lobbyr());lobbyr();show('wl')}
 function pvpOv(w){const me=!!w&&P&&P.own==w;if(me){S.coins+=200;sv()}const nm=w[0]=='T'&&w.length<3?TN[w[1]]:((MB[w]||{}).name||w);ov(w?'🏆 الفائز: '+nm:'تعادل','انتهت المعركة'+(me?' • مكافأة 200 💰':''),[])}
 function pvpSetup(nt){DM=HM=SM=RM=1;P.hp=P.mh=P.t.hp;const ids=nt.pids.slice().sort((a,b)=>((MB[a]||{}).tm|0)-((MB[b]||{}).tm|0)),n=ids.length;ids.forEach((p,j)=>{const a=j/n*T-Math.PI/2;let X=WS/2,Y=WS/2,r=Math.min(900,WS/2-150);for(;r>150;r-=60){X=WS/2+Math.cos(a)*r;Y=WS/2+Math.sin(a)*r;if(!hitO(X,Y,70))break}
